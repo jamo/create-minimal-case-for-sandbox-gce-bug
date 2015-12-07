@@ -10,7 +10,7 @@ script:
   - echo "d6fbb5dc155b878b6b0364852ded71ea4f2e72b9a2e0b308b2cd24ccf237b0d7 *sandbox.tar.gz" > shasum
   - sha256sum -c shasum
   - tar xvf sandbox.tar.gz
-  - ls -laR
+  - ls -laR tmc-sandbox
   - cd tmc-sandbox/uml
   - sudo ./run-test-exercise.sh
   - ls -laR
