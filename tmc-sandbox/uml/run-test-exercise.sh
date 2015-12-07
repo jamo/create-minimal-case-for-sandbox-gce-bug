@@ -15,4 +15,5 @@ output/linux.uml \
   mem=96M
 
 tar -C tmp -xf tmp/output.tar
+exit $(cat tmp/exit_code.txt)
 
