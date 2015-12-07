@@ -4,7 +4,7 @@ language: ruby
 rvm:
   - 2.2.0
 
-script:
+install:
   - sudo apt-get update && sudo apt-get install squashfs-tools multistrap
   - wget -O sandbox.tar.gz http://testmycode.net/travis/sandbox-dc72a687afb33aa282ffbf6d35bd89a35905dc51.tar.gz
   - echo "d6fbb5dc155b878b6b0364852ded71ea4f2e72b9a2e0b308b2cd24ccf237b0d7 *sandbox.tar.gz" > shasum
@@ -12,6 +12,8 @@ script:
   - tar xvf sandbox.tar.gz
   - ls -laR tmc-sandbox
   - cd tmc-sandbox/uml
+
+script:
   - sudo ./run-test-exercise.sh
   - ls -laR
   - df -h
