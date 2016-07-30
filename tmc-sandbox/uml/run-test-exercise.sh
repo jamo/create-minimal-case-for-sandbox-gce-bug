@@ -15,5 +15,6 @@ output/linux.uml \
   mem=96M
 
 tar -C tmp -xf tmp/output.tar
+cat tmp/{exit_code.txt,stderr.txt,stdout.txt,test_output.txt,valgrind.log,validations.json}
 exit $(cat tmp/exit_code.txt)
 
