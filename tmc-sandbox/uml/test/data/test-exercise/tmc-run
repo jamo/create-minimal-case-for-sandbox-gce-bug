@@ -21,6 +21,10 @@ echo "RAM used by ramdisk initially: $(ramdisk_usage_kb) KB"
 
 announce df -h
 
+announce javac Test.java
+announce java Test
+
+
 announce mkdir -p classes/main
 announce mkdir -p classes/test
 announce javac -d classes/main -cp lib/*:src/ src/*.java || exit 101
