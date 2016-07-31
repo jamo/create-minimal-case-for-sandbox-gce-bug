@@ -1,6 +1,8 @@
 #!/bin/sh
 # This is a very flawed runscript but it'll do for now.
 
+sync
+
 announce() {
   echo \$ $@
   $@
