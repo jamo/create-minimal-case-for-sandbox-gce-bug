@@ -6,7 +6,7 @@ rvm:
 
 install:
   - sudo apt-get update && sudo apt-get install squashfs-tools multistrap
-  - wget -O sandbox.tar.gz http://testmycode.net/travis/sandbox-test2.tar.gz
+  - wget -O sandbox.tar.gz http://testmycode.net/travis/sandbox-test4.tar.gz
   - tar xvf sandbox.tar.gz
   - ls -laR tmc-sandbox
   - cd tmc-sandbox/uml
