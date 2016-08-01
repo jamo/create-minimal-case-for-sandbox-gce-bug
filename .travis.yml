@@ -16,4 +16,4 @@ install:
 script:
   - docker -v
   - docker help run
-  - docker run -it --rm --cap-add=SYS_PTRACE --security-opt=apparmor:unconfined --privileged -v tmp:/dev/shm jamo/tmc-sandbox /bin/sh -c "cd tmc-sandbox/uml/ && ./run-test-exercise.sh"
+  - docker run -t --rm --cap-add=SYS_PTRACE --security-opt=apparmor:unconfined --privileged -v tmp:/dev/shm jamo/tmc-sandbox /bin/sh -c "cd tmc-sandbox/uml/ && ./run-test-exercise.sh"
