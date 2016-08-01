@@ -9,6 +9,10 @@ rvm:
 services:
   - docker
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install docker-engine
+
 install:
   - docker pull jamo/tmc-sandbox
   - mkdir tmp/
