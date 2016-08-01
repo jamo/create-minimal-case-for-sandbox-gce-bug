@@ -21,5 +21,5 @@ install:
 script:
   - docker -v
   - docker help run
-  - docker run -d --privileged  -p 127.0.0.1:3001:3001 -v tmp:/dev/shm jamo/tmc-sandbox
+  - docker run -d --privileged --network="host" -p 3001:3001  -v tmp:/dev/shm jamo/tmc-sandbox
   - sleep 20 && curl 127.0.0.1:3001/status.json
