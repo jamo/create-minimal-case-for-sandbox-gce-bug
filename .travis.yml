@@ -4,14 +4,11 @@ language: ruby
 rvm:
   - 2.2.0
 
+services:
+  - docker
+
 install:
-  - sudo apt-get update && sudo apt-get install squashfs-tools multistrap
-  - wget -O sandbox.tar.gz http://testmycode.net/travis/sandbox-e3ee19fcaec3c71b834d5e1b5417a1ae921e3111.tar.gz
-  - tar xvf sandbox.tar.gz
-  - ls -laR tmc-sandbox
-  - cd tmc-sandbox/uml
+  - docker pull jamo/tmc-sandbox
 
 script:
-  - sudo ./run-test-exercise.sh
-  - ls -laR
-  - df -h
+  - docker run -it --rm --network="host" -p 3001:3001 --cap-add=SYS_PTRACE --security-opt=apparmor:unconfined --privileged -v tmp:/dev/shm jamo/tmc-sandbox /bin/sh -c "cd tmc-sandbox/uml/ && ./run-test-exercise.sh"
